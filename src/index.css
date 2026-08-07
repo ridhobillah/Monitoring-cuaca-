@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-space text-mist font-body antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(139, 92, 246, 0.15), transparent),
+    radial-gradient(ellipse 80% 50% at 100% 0%, rgba(45, 212, 191, 0.12), transparent);
+  background-attachment: fixed;
+}
+
+::selection {
+  @apply bg-aurora/30 text-cloud;
+}
+
+/* Custom scrollbar for horizontal forecast strips */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(232, 237, 245, 0.15);
+  border-radius: 999px;
+}
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #2DD4BF;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
